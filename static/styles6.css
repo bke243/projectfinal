@@ -1,0 +1,7 @@
+
+/*overwrite the style5 properties*/
+#schemcatic
+{
+    /*hide the hr*/
+    padding-top: 2rem;
+}

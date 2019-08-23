@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    homepage
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/styles3.css">
+{% endblock %}
+
+{% block main %}
+            <div class="container-fluid padding">
+                <div class="d-flex justify-content-center align-items-center padding">
+                    <div class="jumbotron">
+                        <h3 class="display-4">Resistor value calculator</h3>
+                        <hr class="my-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="/resistor" role="button" class="btn btn-primary btn-lg">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center padding">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Series resistor calculator</h1>
+                        <hr class="my-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="/series" role="button" class="btn btn-primary btn-lg">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center padding">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Parallel resistor calculator</h1>
+                        <hr class="my-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="/parallel" class="btn btn-primary btn-lg">Start</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

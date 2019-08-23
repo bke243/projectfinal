@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title%}
+Index
+{% endblock %}
+
+{%block main %}
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Welcome to Eduresitor</h1>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <div class="row jumbotron paddings">
+            <div class="col-xs-12 col-md-9 col-xl-10">
+                <h3 class="text-center padding">Your tool to perform basic operations on resistors :</h3>
+                <ul>
+                    <li>Calculation  of a resistor's value without using an ammeter(use of colors)</li>
+                    <li>Calculation of the total resistance in a series resistor combinations</li>
+                    <li>Calculation of the total resistance in a parallel resistor combinations</li>
+                </ul>
+                <a href="/login" class="btn btn-primary" role="button">Getting started</a>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center padding">
+            <div class="col-md-8 col-sm-12 col-lg-6 padding">
+                <div class="card">
+
+                    <img src="/static/resistor.png" class="card-img-top" alt="resistor">
+                    <div class="card-body">
+                        <h4 class="card-title">What is a resistor ?</h4>
+                        <p class="card-text">A resistor is a component that is specifically disegned to have
+                        a certain amount of resistance.</p>
+                        <p class="card-text">The principal applications of resistors are: </p>
+                        <ul>
+                            <li>To limit current</li>
+                            <li>Divide voltage o=and/or current</li>
+                            <li>In some cases generate heat</li>
+                        </ul>
+                        <a href="https://en.wikipedia.org/wiki/Resistor" class="btn btn-primary"> Read more</a>
+                    </div>
+                </div>
+           </div>
+            <div class="col-md-8 col-sm-12 col-lg-6 padding">
+                <div class="card">
+                    <img src="/static/voltage.png" class="card-img-top" alt="voltage">
+                    <div class="card-body">
+                        <h4 class="card-title">What is a voltage divider ?</h4>
+                        <p class="card-text">A voltage divider is a simple circuit which turns a large voltage into a smaller one.
+                        Using at least two series resistors and an input voltage, we can create an output voltage that is a fraction of the input. </p>
+                        <br>
+                        <ul>
+                            <li>Series resistors divide voltage</li>
+                            <li>At least two resistors connected in serie divide current</li>
+                        </ul>
+                        <a href="https://www.elprocus.com/voltage-divider-rule-with-examples/" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center padding">
+            <div class="col-md-8  col-sm-12 col-lg-6 padding">
+                <div class="card">
+                    <img src="/static/current.png" alt="current">
+                    <div class="card-body">
+                        <h4 class="card-title">What is a current divider ?</h4>
+                        <p class="card-text">A current divider is a simple circuit which turns a large current into a smaller one.
+                        Using at least two parallel resistors and an input current, we can create an output current that is a fraction of the input.</p>
+                        <ul>
+                            <li>Parallel resistors divide current</li>
+                            <li>At least two reistors connected in parallel divide current</li>
+                        </ul>
+                        <a href="https://en.wikipedia.org/wiki/Current_divider" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8  col-sm-12 col-lg-6 padding">
+                <div class="card">
+                    <img src="/static/ohms.jpg" alt="ohm's law">
+                    <div class="card-body">
+                        <h4 class="card-title">Ohm's law</h4>
+                        <p class="card-text">Discoverd by Georg Simon Ohm</p>
+                        <ul>
+                            <li>Ohm's law describes mathematically how voltage, current, and resistance in a circuit are related.</li>
+                            <li>Ohm's law can be written in three equivalent forms depending on the quatity you need to determine.</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+{% endblock %}

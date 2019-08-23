@@ -1,0 +1,196 @@
+
+body
+{
+    /*make sure that all text are center*/
+    background-image: none;
+    text-align : center;
+}
+
+.container-fluid
+{
+    /*add padding to the top of the main page*/
+    padding-top: 5%;
+}
+
+form select
+{
+    /*change the color font*/
+    color : white;
+}
+
+.input-group-prepend
+{
+    /*adjust the prepend width to make it uniform everywhere*/
+    width: 90px;
+}
+
+.numberofband
+{
+    margin-left: 20%;
+}
+
+
+/*set all needed background-colors*/
+.black
+{
+    background-color : #000000;
+}
+
+.blue
+{
+    background-color : #0000FF;
+}
+
+.brown
+{
+    background-color : #964B00;
+}
+
+.gold
+{
+    background-color : #F0D52D;
+}
+
+.gray
+{
+    background-color : #808080;
+}
+
+.green
+{
+    background-color : #00FF00;
+}
+
+.orange
+{
+    background-color : #FF681F;
+}
+
+.red
+{
+    background-color : #FF0000;
+}
+
+.silver
+{
+    background-color : #BFC1C2;
+
+}
+
+.violet
+{
+    background-color : #240A40;
+}
+
+.white
+{
+    background-color : #FFFFFF;
+    color : black;
+}
+
+.yellow
+{
+    background-color : #FFFF00;
+}
+
+
+
+#second-form
+{
+    /*change the color font*/
+    color : red;
+}
+
+select option
+{
+    /*make the select font-weight Bold*/
+    font-weight: bold;
+}
+
+select
+{
+    /*set the select button widht to automatic */
+    width : auto;
+}
+
+.result
+{
+    /*customize the place where to put the finale result*/
+    background-color: #808080;
+    border: 1px solid black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 20px;
+    height : 30px;
+    overflow: auto;
+}
+
+
+form
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: 65%;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+.firstform
+{
+    padding-left:5%;
+}
+
+img
+{
+        /*Resize auto of the image*/
+        width : 100%;
+        height : auto;
+}
+
+
+
+
+
+/*media query*/
+
+@media (max-width: 992px)
+{
+    img
+    {
+        /*Resize auto of the image*/
+        width : 75%;
+        height : auto;
+    }
+}
+@media (max-width: 576px)
+{
+    img
+    {
+        /*Resize auto of the image*/
+        width : 100%;
+        height : auto;
+    }
+
+
+    form
+    {
+        /*resize the form accordingly */
+        width : 90%;
+    }
+
+    .firstform
+    {
+        /*add some padding the the first form*/
+        padding-left: 10%;
+    }
+}

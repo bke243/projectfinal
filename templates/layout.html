@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--bootstrap go to  http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- my icon -->
+        <link href="/static/webicon.jpg" rel="icon">
+
+        <!-- css-->
+        <link href="/static/styles.css" rel="stylesheet">
+        {% block head%} {% endblock %}
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <title>Eduresistor {% block title %}{% endblock %}</title>
+
+        <!--Icon -->
+    	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    </head>
+    <body>
+
+        <!--navigation bar-->
+        <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="/index"><img src="/static/logo.png" class="logo" alt="logoweb"></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a href="/resistor" class="nav-link">Resistor</a></li>
+                        <li class="nav-item"><a href="series" class="nav-link">Series</a></li>
+                        <li class="nav-item"><a href="parallel" class="nav-link">Parallel</a></li>
+                        <li class="nav-item"><a class="log_button nav-link" href="/logout">Log Out</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="log_button nav-link" href="/login">Log In</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+
+        <!--flash message -->
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main >
+                {% block main %}{% endblock %}
+        </main>
+
+
+        <footer class="small text-center text-muted">
+            <div class="container-fluid">
+                {% if not session.user_id %}
+                <div class="text-center contact">
+                    <h2>Contact us</h2>
+                    <hr>
+                </div>
+                <div class="row social">
+                    <div class="col">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="col">
+                         <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <div class="col">
+                         <a href="#"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="text-center footer">
+                    <h5>&copy; Eduresistor</h5>
+                    <br>
+            </div>
+        </footer>
+    </body>
+</html>

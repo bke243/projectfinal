@@ -1,0 +1,204 @@
+
+
+body
+{
+    /*make sure that all text are center*/
+    background-image: none;
+    text-align : center;
+}
+
+.container-fluid
+{
+    /*add padding to the top of the main page*/
+    padding-top: 5%;
+}
+
+select option
+{
+    /*make the select font-weight Bold*/
+    font-weight: bold;
+}
+
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+img
+{
+        /*Resize auto of the image*/
+        width : 80%;
+        height : auto;
+}
+
+.myform
+{
+    /*set some parameters for the form*/
+    padding-top: 2rem;
+    overflow: auto;
+    overflow-x: hidden;
+    order : 1;
+
+    height : 800px;
+
+}
+
+.images
+{
+    /*add padding-top to the image title*/
+    padding-top: 1.5rem;
+}
+
+.lead
+{
+    /*overwrites class lead property */
+    font-size: 1.1rem;
+}
+
+.images h1
+{
+    /*center the image title*/
+    text-align: center;
+}
+
+#totalresistance
+{
+    /*customize the place where to put the finale result*/
+    background-color: #808080;
+    border: 1px solid black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 20px;
+    height : 30px;
+    overflow: auto;
+    margin-right: 5%;
+}
+
+form
+{
+    /* center form controls */
+    display: inline-block;
+}
+
+#schemcatic
+{
+    /*hide the hr*/
+    padding-top: 0;
+
+    width : 90%;
+}
+
+.images
+{
+    /*set the text position*/
+    text-align: left;
+}
+.jumbotron
+{
+    /*add padding-top*/
+    padding-top: 2rem;
+    /*round the border*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.page_title
+{
+    /*resze the with*/
+    width : 80%;
+}
+/*media query*/
+@media (max-width: 992px)
+{
+    img
+    {
+        /*Resize auto of the image*/
+        width : 75%;
+        height : auto;
+    }
+
+    .myform
+    {
+        /*set some parameters for the form*/
+        padding-top: 2rem;
+        overflow: hidden;
+        overflow-x: none;
+        order : 1;
+
+        height : auto;
+
+    }
+
+    #schemcatic
+    {
+        /*resize hr*/
+        width : 80%;
+    }
+
+    .page_title
+    {
+        /*resze the with*/
+        width : auto;
+    }
+}
+
+
+@media (max-width: 576px)
+{
+    img
+    {
+        /*Resize auto of the image*/
+        width : 100%;
+        height : auto;
+    }
+
+    .myform
+    {
+        /*set some parameters for the form*/
+        padding-top: 2rem;
+        overflow: hidden;
+        overflow-x: none;
+        order : 1;
+
+        height : auto;
+
+    }
+
+    .images
+    {
+        /*change the text position*/
+        padding: 0;
+
+        /*align the text*/
+        text-align : left;
+    }
+
+    .jumbotron
+    {
+        width : 100%;
+        text-align: left;
+
+        /*overwrites the border radius*/
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+    #schemcatic
+    {
+        /*resize hr*/
+        width : 95%;
+    }
+
+    .page_title
+    {
+        /*resze the with*/
+        width : auto;
+    }
+}

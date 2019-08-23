@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block head %}
+    <link href="/static/styles2.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row justify-content-center padding">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-4 p-5">
+                <form class="form-container text-center needs-validation" action="/register" method="post" novalidate>
+                    <div class="form-group">
+                        <input type="email" class="form-control" autocomplete="off" autofocus name="email" placeholder="Email" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Email.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username" name="username" required>
+                        <div class="invalid-feedback">
+                            Please provide valid Username.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" reuired>
+                        <small>8-12 characters at least one number, one upper & lowercase english letters</small>
+                         <div class="invalid-feedback">
+                            Please provide a valid Password.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" placeholder="Passowrd (again)" name="confirmation" required>
+                        <div class="invalid-feedback">
+                            Please confirm you Password.
+                        </div>
+                    </div>
+                    <div class="button padding">
+                        <button class="btn btn-primary btn-block" type="submit" >Sign Up</button>
+                    </div>
+                    <hr>
+                    <a href="/login" class="btn btn-danger btn-block">Sing in as a user</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/formvalidation.js"></script>
+{% endblock %}

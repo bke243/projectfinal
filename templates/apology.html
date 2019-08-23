@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/styles7.css">
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid mt-5 padding">
+        <div class="jumbotron text-center padding">
+            <h1 class="display-4 padding">{{ top }} ERROR</h1>
+            <hr>
+            <p class="lead"><strong>{{bottom}}</strong></p>
+        </div>
+    </div>
+{% endblock %}

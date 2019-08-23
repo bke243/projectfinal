@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Resistor
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/styles4.css" type="text/css" />
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid padding ">
+        <div >
+            <h1 >RESISTOR</h1>
+            <hr>
+        </div>
+        <div class="row padding">
+            <div class="caltulator_data padding col-md-12 col-lg-6">
+                <div class=" text-center padding">
+                    <form class="form-group firstform padding" id="first_form">
+                        <div class="col-12">
+                            <h5 class="band_selector_header">Number of Bands:</h5>
+                            <hr>
+                        </div>
+                        <div class="form-goup form-inline" id="number_of_band">
+                            <div class="form-check col-4 ">
+                                <input type="radio" id="four_band" class="form-check-input" name="band" value="4" checked>
+                                <label class="form-check-label">4 Band</label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input type="radio" id="five_band" class="form-check-input" name="band" value="5">
+                                <label class="form-check-label">5 Band</label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input type="radio" id="six_band" class="form-check-input " name="band" value="6">
+                                <label class="form-check-label">6 Band</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <h5 class="text-center padding">Select the color of each band on the resistor:</h5>
+                <div class="padding" id="color_selector">
+                    <form class="form-group" id="second_form">
+                        <div class=" input-group text-center  padding">
+                            <div class="input-group-prepend">
+                                <label for="firstband" class="input-group-text">1st Band</label>
+                            </div>
+                            <select  id="firstband" autofocus class="form-control color_code">
+                                <option value="" disabled selected>Select a color</option>
+                                <option value="black" class="black">0 Black</option>
+                                <option value="brown" class="brown">1 Brown</option>
+                                <option value="red" class="red">2 Red</option>
+                                <option value="orange" class="orange">3 Orange</option>
+                                <option value="yellow" class="yellow">4 Yellow</option>
+                                <option value="green" class="green">5 Green</option>
+                                <option value="blue" class="blue">6 Blue</option>
+                                <option value="violet" class="violet">7 Violet</option>
+                                <option value="gray" class="gray">8 Gray</option>
+                                <option value="white" class="white">9 White</option>
+                            </select>
+                        </div>
+                        <div class="input-group padding" >
+                            <div class="input-group-prepend">
+                                <label for="secondband" class="input-group-text">2nd Band</label>
+                            </div>
+                            <select  id="secondband" class="form-control color_code">
+                                <option value="" disabled selected>Select a color</option>
+                                <option value="black" class="black">0 Black</option>
+                                <option value="brown" class="brown">1 Brown</option>
+                                <option value="red" class="red">2 Red</option>
+                                <option value="orange" class="orange">3 Orange</option>
+                                <option value="yellow" class="yellow">4 Yellow</option>
+                                <option value="green" class="green">5 Green</option>
+                                <option value="blue" class="blue">6 Blue</option>
+                                <option value="violet" class="violet">7 Violet</option>
+                                <option value="gray" class="gray">8 Gray</option>
+                                <option value="white" class="white">9 White</option>
+                            </select>
+                        </div>
+                        <div class="input-group padding" id="band3" style="display: none;">
+                            <div class="input-group-prepend">
+                                <label for="thirdband" class="input-group-text">3rd Band</label>
+                            </div>
+                            <select  id="thirdband" class="form-control color_code">
+                                <option value="" disabled selected>Select a color</option>
+                                <option value="black" class ="black">0 Black</option>
+                                <option value="brown" class="brown">1 Brown</option>
+                                <option value="red" class="red">2 Red</option>
+                                <option value="orange" class="orange">3 Orange</option>
+                                <option value="yellow" class="yellow">4 Yellow</option>
+                                <option value="green" class="green">5 Green</option>
+                                <option value="blue" class="blue">6 Blue</option>
+                                <option value="violet" class="violet">7 Violet</option>
+                                <option value="gray" class="gray">8 Gray</option>
+                                <option value="white" class="white">9 White</option>
+                            </select>
+                        </div>
+                        <div class="input-group padding">
+                            <div class="input-group-prepend">
+                                <label for="multiplier" class="input-group-text">Multiplier</label>
+                            </div>
+                            <select  id="multiplier" class="form-control color_code">
+                                <option value="" disabled selected>Select a color</option>
+                                <option value="black" class ="black">x1&Omega; Black</option>
+                                <option value="brown" class="brown">x10&Omega; Brown</option>
+                                <option value="red" class="red">x100&Omega; Red</option>
+                                <option value="orange" class="orange">x1K&Omega; Orange</option>
+                                <option value="yellow" class="yellow">x10k&Omega; Yellow</option>
+                                <option value="green" class="green">x100k&Omega; Green</option>
+                                <option value="blue" class="blue">x1M&Omega; Blue</option>
+                                <option value="violet" class="violet">x10M&Omega; Violet</option>
+                                <option value="gray" class="gray">x100M&Omega; Gray</option>
+                                <option value="white" class="white">x1G&Omega; White</option>
+                                <option value="gold" class="gold">x0.1&Omega; Gold</option>
+                                <option value="silver" class="silver">x0.01&Omega; Silver</option>
+                            </select>
+                        </div>
+                        <div class="input-group padding " >
+                            <div class="input-group-prepend">
+                                <label for="tolerance" class="input-group-text">Tolerance</label>
+                            </div>
+                            <select  id="tolerance" class="form-control color_code">
+                                <option value="" disabled selected>Select a color</option>
+                                <option value="brown" class="brown">&plusmn;1% Brown</option>
+                                <option value="red" class="red">&plusmn;2% Red</option>
+                                <option value="orange" class="orange">&plusmn;3% Orange</option>
+                                <option value="yellow" class="yellow">&plusmn;4% Yellow</option>
+                                <option value="green" class="green">&plusmn;0.5% Green</option>
+                                <option value="blue" class="blue">&plusmn;0.25% Blue</option>
+                                <option value="violet" class="violet">&plusmn;0.1%Violet</option>
+                                <option value="gray" class="gray">&plusmn;0.05% Gray</option>
+                                <option value="gold" class="gold">&plusmn;5% Gold</option>
+                                <option value="silver" class="silver">&plusmn;10% Silver</option>
+                            </select>
+                        </div>
+                        <div class="input-group padding" id="band6" style="display: none;">
+                            <div class="input-group-prepend">
+                                <label for="tempco" class="input-group-text">Tempcoef</label>
+                            </div>
+                            <select  id="tempco" class="form-control color_code">
+                                <option value="" disabled selected>Select a color</option>
+                                <option value="brown" class="brown">100 Brown</option>
+                                <option value="red" class="red">50 Red</option>
+                                <option value="orange" class="orange">15 Orange</option>
+                                <option value="yellow" class="yellow">25 Yellow</option>
+                                <option value="blue" class="blue">10 Blue</option>
+                                <option value="violet" class="violet">5 Violet</option>
+                            </select>
+                        </div>
+                        <div class="result text-left text-middle">
+                            <strong>Resistor Value :</strong>
+                            <span id="resistorvalue" class="resistorvalue"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="image">
+                    <h1>Color Chart</h1>
+                    <hr>
+                    <img  src="/static/resistorcalculator.jpg" alt="resistorcalculator">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/resistor.js"></script>
+    <script src="/static/colors.js" ></script>
+{% endblock %}

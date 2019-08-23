@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Parallel
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/styles5.css" type="text/css" />
+    <link rel="stylesheet" href="/static/styles6.css" type="text/css" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+{% endblock %}
+
+{% block main %}
+        <div class="container-fluid padding">
+        <div class="row">
+            <div class="col-12">
+                <!--page title -->
+                <h1>Parallel Resistor Calculator</h1>
+                <hr class="page_title">
+            </div>
+            <!--form and others-->
+            <div class="col-md-12 col-lg-6">
+                <div class="firstform">
+                    <form class="myform needs-validation" novalidate>
+                        <div class="form-group row padding">
+                            <label for="option" class="col-4">Choose the option</label>
+                            <div class="col-8">
+                                <select name="myoption" id="option" class="form-control" autofocus required>
+                                    <option value="" selected disabled>Select an option</option>
+                                    <option value="resistance">Total Parallel Resistance</option>
+                                    <option value="conductance">Total Parallel Conductance</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please choose an option.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row padding">
+                            <label for="numberofresistors" class="col-4">Number of Resistors</label>
+                            <div class="col-8">
+                                <input type="number" id="numberofresistors" class="form-control" min="2" value="2" required>
+                                <div class="invalid-feedback">
+                                    Please Enter the number of resistors.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="container">
+                            <div class="form-group row padding">
+                                <label for="R1" class="col-4">R1 (&ohm;)</label>
+                                <div class="col-8">
+                                    <input type="number" min="1"  id="R1" class="form-control" placeholder="Resistor value" required>
+                                    <div class="invalid-feedback">
+                                        Please Enter the resistor value.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row padding">
+                                <label for="R2" class="col-4">R2 (&ohm;)</label>
+                                <div class="col-8">
+                                    <input type="number" min="1"  id="R2" class="form-control" placeholder="Resistor value" required>
+                                    <div class="invalid-feedback">
+                                        Please Enter the resistor value.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Result-->
+                        <div class="row padding">
+                            <label for="totalresistance" class="col-4"><strong id="resulttitle">Result</strong></label>
+                            <div  class="col-8 text-left text-middle">
+                                <div id="totalresistance">
+                                    <strong><span id="reuslt"></span></strong>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--button-->
+                        <div class="form-group row padding buttons">
+                            <label for="calculate" class="col-4"></label>
+                            <div class="col-8" >
+                                <input id="calculate" type="button" value="Calculate" class="btn btn-primary calculate_button">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <!--image of series resistor -->
+            <div class="col-md-12 col-lg-6 images">
+                <div class="image padding">
+                    <h1>Schematic Representation</h1>
+                    <hr id="schemcatic">
+                    <img src="/static/parallel.png" alt="parallelresistor">
+                </div>
+
+                <!--jumbotron-->
+                <div class="jumbotron padding">
+                    <h4 class="text-left padding"><strong>How to recognize parallel circuit</strong></h4>
+                    <p class="lead padding">When two or more resistors are <b>individually</b> connected between the same two points,  they are in parallel with each other.
+                    <br>A parallel circuit provides more than one path for current called <b><i>branch</i></b>.</p>
+                    <ul>
+                        <li>When resitors are connected in parallel, the total resistance of the circuit decreases.
+                        The total resistance of a parallel circuit is always less than the value of the smallest resistor in that circuit.
+                            <strong class="formula">$$R_t = {1 \over { {1\over R_1} + {1\over R_2} + {1\over R_3} + ... + {1\over R_n}}} $$</strong></li>
+                        <li>The reciprocal of resistance is conductance, symbolized by G. it is measure of the ease with with which current is established. Formula :
+                            <strong class="formula">$$ G = {1 \over R }$$</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script language="text/template">
+        <div class="form-group row padding">
+            <label for="{RX}" class="col-4">{RX} (&ohm;)</label>
+            <div class="col-8">
+                <input type="number" class="form-control" id="{RX}" min="1" placeholder="Resistor value" required>
+                <div class="invalid-feedback">
+                    Please Enter the resistor value.
+                </div>
+            </div>
+        </div>
+    </script>
+    <script src="/static/parallel.js"></script>
+{% endblock %}

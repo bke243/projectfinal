@@ -1,0 +1,48 @@
+
+.container-fluid
+{
+    padding-top: 4rem;
+}
+
+.jumbotron
+{
+    width : auto;
+}
+
+/*jumbotron */
+.jumbotron
+{
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+/* media query*/
+@media only screen and (max-width: 569px)
+{
+    .jumbotron
+    {
+        border-radius: 0;
+        border-bottom : 2px solid #3F3E41;
+        margin-bottom : 0;
+        width : 100%;
+    }
+
+    .padding
+    {
+        padding : 0;
+    }
+
+    .container-fluid
+    {
+        padding : 0;
+    }
+
+
+    body
+    {
+        /*make sure that all text are center*/
+        background-image: none;
+        text-align : center;
+    }
+}
+
