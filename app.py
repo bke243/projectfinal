@@ -18,6 +18,19 @@ from functools import wraps
 
 # end of import
 
+# start
+# added the below as part of Heroku post on Medium
+import psycopg2
+urllib.parse.uses_netloc.append("postgres")
+url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
+conn = psycopg2.connect(
+ database=url.path[1:],
+ user=url.username,
+ password=url.password,
+ host=url.hostname,
+ port=url.port
+)
+# end
 
 # Configure application
 app = Flask(__name__)
@@ -43,6 +56,33 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("postgres://wcvavlpiuqaivg:0736eeb5cb2f842b4651844ac50ada8c7e7352fb95e180fdb3df2d1d13dec2c8@ec2-54-217-219-235.eu-west-1.compute.amazonaws.com:5432/d2spdkkmuliugh")
 
+# start
+# added the below as part of Heroku post on Medium
+class SQL(object):
+    def __init__(self, url):
+        try:
+            self.engine = sqlalchemy.create_engine(url)
+        except Exception as e:
+            raise RuntimeError(e)
+    def execute(self, text, *multiparams, **params):
+        try:
+            statement = sqlalchemy.text(text).bindparams(*multiparams, **params)
+            result = self.engine.execute(str(statement.compile(compile_kwargs={"literal_binds": True})))
+            # SELECT
+            if result.returns_rows:
+                rows = result.fetchall()
+                return [dict(row) for row in rows]
+            # INSERT
+            elif result.lastrowid is not None:
+                return result.lastrowid
+            # DELETE, UPDATE
+            else:
+                return result.rowcount
+        except sqlalchemy.exc.IntegrityError:
+            return None
+        except Exception as e:
+            raise RuntimeError(e)
+# end
 
 # this content should be in helpers.py
 
