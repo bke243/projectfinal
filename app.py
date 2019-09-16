@@ -230,6 +230,9 @@ def register():
 
             # store the user's id into session for a better user experience
             user = db.execute("SELECT id  FROM users WHERE username = :username", username=username)
+            if not user:
+                return apology("Username already taken")
+
             session["user_id"] = user[0]["id"]
 
             # flash a message to the user and render the user's home page
