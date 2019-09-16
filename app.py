@@ -20,7 +20,11 @@ from functools import wraps
 
 # start
 # added the below as part of Heroku post on Medium
-
+import psycopg2
+urllib.parse.uses_netloc.append("postgres")
+url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
+conn = psycopg2.connect('postgres://wcvavlpiuqaivg:0736eeb5cb2f842b4651844ac50ada8c7e7352fb95e180fdb3df2d1d13dec2c8@ec2-54-217-219-235.eu-west-1.compute.amazonaws.com:5432/d2spdkkmuliugh', sslmode='require')
+# end
 
 # Configure application
 app = Flask(__name__)
@@ -44,7 +48,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL(os.environ.get["DATABASE_URL"])
+db = SQL(os.environ["DATABASE_URL"])
 
 # start
 # added the below as part of Heroku post on Medium
