@@ -23,13 +23,7 @@ from functools import wraps
 import psycopg2
 urllib.parse.uses_netloc.append("postgres")
 url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
-conn = psycopg2.connect(
- database=url.path[1:],
- user=url.username,
- password=url.password,
- host=url.hostname,
- port=url.port
-)
+conn = psycopg2.connect('postgres://wcvavlpiuqaivg:0736eeb5cb2f842b4651844ac50ada8c7e7352fb95e180fdb3df2d1d13dec2c8@ec2-54-217-219-235.eu-west-1.compute.amazonaws.com:5432/d2spdkkmuliugh', sslmode='require')
 # end
 
 # Configure application
