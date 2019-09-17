@@ -233,8 +233,12 @@ def register():
         # ensure that the username or eamail is available
         if data_availability == True:
             # add the user in the data base
-            db.execute("INSERT INTO users(username, email, hash) VALUES(:username, :email, :hash_password)",
-                       {'username': username, 'email':usermail, 'hash_password': hash_password})
+            # get the max id
+            max_id = db.execute("SELECT MAX(id) FROM users")
+            db_max_id = max_id[0]['id']
+            new_user_id = db_max_id + 1
+            db.execute("INSERT INTO users(id, username, email, hash) VALUES(:id, :username, :email, :hash_password)",
+                       {'id': new_user_id, 'username': username, 'email':usermail, 'hash_password': hash_password})
             # store the user's id into session for a better user experience
             user = db.execute("SELECT id  FROM users WHERE username = :username", username=username)
             if not user:
