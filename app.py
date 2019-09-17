@@ -54,7 +54,7 @@ def index():
     """Render the main page"""
     if request.method == "GET":
         # display homepage if the user is not log in
-        return redirect("index.html")
+        return render_template("index.html")
     else:
         return apology("SORRY")
 
