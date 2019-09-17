@@ -50,33 +50,7 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL(os.environ["DATABASE_URL"])
 
-# start
-# added the below as part of Heroku post on Medium
-class SQL(object):
-    def __init__(self, url):
-        try:
-            self.engine = sqlalchemy.create_engine(url)
-        except Exception as e:
-            raise RuntimeError(e)
-    def execute(self, text, *multiparams, **params):
-        try:
-            statement = sqlalchemy.text(text).bindparams(*multiparams, **params)
-            result = self.engine.execute(str(statement.compile(compile_kwargs={"literal_binds": True})))
-            # SELECT
-            if result.returns_rows:
-                rows = result.fetchall()
-                return [dict(row) for row in rows]
-            # INSERT
-            elif result.lastrowid is not None:
-                return result.lastrowid
-            # DELETE, UPDATE
-            else:
-                return result.rowcount
-        except sqlalchemy.exc.IntegrityError:
-            return None
-        except Exception as e:
-            raise RuntimeError(e)
-# end
+
 
 # this content should be in helpers.py
 
@@ -260,8 +234,8 @@ def register():
         if data_availability == True:
             # add the user in the data base
             db.execute("INSERT INTO users(username, email, hash) VALUES(:username, :email, :hash_password)",
-                       username=username, email=usermail, hash_password=hash_password)
-
+                       {'username': username, 'email':usermail, 'hash_password': hash_password})
+            db.commit()
             # store the user's id into session for a better user experience
             user = db.execute("SELECT id  FROM users WHERE username = :username", username=username)
             if not user:
