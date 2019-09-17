@@ -49,37 +49,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL(os.environ["DATABASE_URL"])
 
-# start
-# added the below as part of Heroku post on Medium
-class SQL(object):
-    def __init__(self, url):
-        try:
-            self.engine = sqlalchemy.create_engine(url)
-        except Exception as e:
-            raise RuntimeError(e)
-    def execute(self, text, *multiparams, **params):
-        try:
-            statement = sqlalchemy.text(text).bindparams(*multiparams, **params)
-            result = self.engine.execute(str(statement.compile(compile_kwargs={"literal_binds": True})))
-            # SELECT
-            if result.returns_rows:
-                rows = result.fetchall()
-                return [dict(row) for row in rows]
-            # INSERT
-            elif result.lastrowid is not None:
-                return result.lastrowid
-            # DELETE, UPDATE
-            else:
-                return result.rowcount
-        except sqlalchemy.exc.IntegrityError:
-            return None
-        except Exception as e:
-            raise RuntimeError(e)
-# end
-
-
-############################################################
-
 # this content should be in helpers.py
 
 def apology(message, code=400):
@@ -267,7 +236,10 @@ def register():
             new_user_id = db_max_id + 1
             db.execute("INSERT INTO users(id, username, email, hash) VALUES(:id, :username, :email, :hash_password)", id=new_user_id, username=username, email=usermail, hash_password=hash_password)
             # store the user's id into session for a better user experience
-            
+            user = db.execute("SELECT id  FROM users WHERE username = :username", username=username)
+            if not user:
+                return apology("Username already taken can not insert the username")
+
             session["user_id"] = user[0]["id"]
 
             # flash a message to the user and render the user's home page
