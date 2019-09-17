@@ -1,266 +1,279 @@
 /**/
 
+
 /* general */
-html, body
-{
-  height : 100%;
-  width : 100%;
-  font-family : "Poppins", sans-serif;
-  color : #222;
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    color: #222;
 }
+
 
 /*putting the back gound image*/
-body
-{
-  background: url(/static/background.jpg) no-repeat center fixed;
-  -webkit-background-size : cover;
-  -moz-background-size: cover;
-  -o-background-size : cover;
-  background-size : cover;
+
+body {
+    background: url(/static/background.jpg) no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
 
 /*welcome padding and hr*/
-.welcome
-{
-  padding-top: 2rem;
-  font-weight: bold;
-  color : #8B8B7A;
+
+.welcome {
+    padding-top: 2rem;
+    font-weight: bold;
+    color: #8B8B7A;
 }
 
-.welcome hr
-{
-  /*adjust the width of hr*/
-  width : 90%;
+.welcome hr {
+    /*adjust the width of hr*/
+    width: 90%;
 }
 
-hr
-{
+hr {
     /* customise our hr */
-  border-top : 2px solid #b4b4b4;
-  width : 95%;
-  margin-top : .3rem;
-  margin-bottom : 1rem;
-  padding-top : 2rem;
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
 }
 
-
-
-.padding
-{
+.padding {
     /*modify padding*/
     padding-bottom: 0.7rem;
 }
 
 
-
 /*jumbotron */
 
-.jumbotron
-{
-  /*add padding */
-  padding : 1rem;
-  /*no border-radius*/
-  border-radius : 0;
-  /*make the jumbotron 100% opaque*/
-  opacity: 1;
-  /*set the font-weight to bold*/
-  font-weight: bold;
+.jumbotron {
+    /*add padding */
+    padding: 1rem;
+    /*no border-radius*/
+    border-radius: 0;
+    /*make the jumbotron 100% opaque*/
+    opacity: 1;
+    /*set the font-weight to bold*/
+    font-weight: bold;
 }
 
-
-
-.jumbotron a:hover
-{
-  /*change the color of the jumbotron link*/
-  background-color: #8B8B7A;
+.jumbotron a:hover {
+    /*change the color of the jumbotron link*/
+    background-color: #8B8B7A;
 }
+
 
 /*social linkk*/
-.social a
-{
-  font-size: 4em;
-  padding : .5rem;
+
+.social a {
+    font-size: 4em;
+    padding: .5rem;
 }
 
 
 /*set the color of social links*/
+
 .fa-facebook {
-  color: #3B5998;
+    color: #3B5998;
 }
 
 .fa-twitter {
-  color : #00aced;
+    color: #00aced;
 }
 
 .fa-google {
-  color : #dd4b39;
+    color: #dd4b39;
 }
 
 .fa-instagram {
-  color : #517fa4;
+    color: #517fa4;
 }
 
 
 /* hover for icon */
-.fa-facebook:hover,.fa-twitter:hover,.fa-instagram:hover,.fa-google:hover,.fa-youtube:hover
-{
-  color : #d5d5d5;
+
+.fa-facebook:hover,
+.fa-twitter:hover,
+.fa-instagram:hover,
+.fa-google:hover,
+.fa-youtube:hover {
+    color: #d5d5d5;
 }
 
-
-nav .navbar-brand
-{
+nav .navbar-brand {
     /* size for brand */
     font-size: xx-large;
 }
 
+
 /* colors for brand */
-nav .navbar-brand .blue
-{
+
+nav .navbar-brand .blue {
     color: #537fbe;
 }
-nav .navbar-brand .red
-{
+
+nav .navbar-brand .red {
     color: #ea433b;
 }
-nav .navbar-brand .yellow
-{
+
+nav .navbar-brand .yellow {
     color: #f5b82e;
 }
-nav .navbar-brand .green
-{
+
+nav .navbar-brand .green {
     color: #2e944b;
 }
 
-footer .footer
-{
+footer .footer {
     /*set the footer background color*/
     background-color: #3F3E41;
-    padding-top : .8rem;
+    padding-top: .8rem;
 }
 
-
-footer .contact hr
-
-{
-  /*resize the width of hr*/
-    width : 50%;
+footer .contact hr {
+    /*resize the width of hr*/
+    width: 50%;
 }
+
 
 /*resizetheimage */
-.card img
-{
-  width : 70%;
-  height : 150px;
 
-  /*center the image*/
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+.card img {
+    width: 100%;
+    height: 180px;
+    /*center the image*/
+    margin: 0 auto;
+    /* Added */
+    float: none;
+    /* Added */
+    margin-bottom: 10px;
+    /* Added */
+    border: 1px solid #6C2F54;
+    border-radius: 3px;
 }
+
+
+/*restyle the card body and other content*/
+
+.card-body {
+    /*set the padding*/
+    padding: 0.7rem;
+}
+
+h5.card-title {
+    font-size: 1.3rem;
+}
+
+p.card-text {
+    font-size: 1rem;
+    text-align: left;
+}
+
+a.btn.btn-outline-primary {
+    float: right;
+}
+
 
 /*resizing the card height*/
-.card
-{
-  height :31rem;
-  width : 80%;
 
-  /*center the card*/
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+.card {
+    height: 31rem;
+    width: 80%;
+    /*center the card*/
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    /*transition */
+    transition: all 1.5s ease;
+    overflow: hidden;
 }
 
+
+/*card hover*/
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+/*list style*/
 
 
 /*logo*/
-.logo
-{
-  /*resize the width */
-  width : auto;
-  height: 4rem;
 
-  /*add the border radius*/
-  border-radius: 10px;
+.logo {
+    /*resize the width */
+    width: auto;
+    height: 4rem;
+    /*add the border radius*/
+    border-radius: 10px;
 }
-
 
 
 /*log_in and log_out buttom*/
-.log_button
-{
-  /*add border radius*/
-  border-radius: 15px;
 
-  /*style the border*/
-  border: 2px solid #783CBE;
+.log_button {
+    /*add border radius*/
+    border-radius: 15px;
+    /*style the border*/
+    border: 2px solid #783CBE;
 }
 
-.log_button:hover
-{
-  /*change the background-color of the button*/
-  background-color : #702799;
+.log_button:hover {
+    /*change the background-color of the button*/
+    background-color: #702799;
 }
+
 
 /* media queries */
-@media (max-width: 992px)
-{
-    .social a
-    {
-      /*change the padding and the font-size*/
-      font-size :4em;
-      padding : 2rem;
+
+@media (max-width: 992px) {
+    .social a {
+        /*change the padding and the font-size*/
+        font-size: 4em;
+        padding: 2rem;
     }
-
-    .card
-  {
-    /*set the height of the card to auto*/
-    height: auto;
-  }
+    .card {
+        /*set the height of the card to auto*/
+        height: auto;
+    }
 }
 
-@media (max-width: 768px)
-{
-    .social a
-  {
-    /*change the padding and the font-size*/
-    font-size : 2.5em;
-    padding : 1.2rem;
-  }
-
-  div .welcome .display-4
-  {
-    /*change the font-size*/
-    font-size : 35px;
-  }
-
-
-  .log_button
-{
-  /*remove the border-radius*/
-  border: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+@media (max-width: 768px) {
+    .social a {
+        /*change the padding and the font-size*/
+        font-size: 2.5em;
+        padding: 1.2rem;
+    }
+    div .welcome .display-4 {
+        /*change the font-size*/
+        font-size: 35px;
+    }
+    .log_button {
+        /*remove the border-radius*/
+        border: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
 }
 
-}
-
-
-@media (max-width : 576px)
-{
-   .social a
-  {
-    /*change the padding and the font-size*/
-    font-size : 2em;
-    padding : .7rem;
-  }
-
-  .card
-  {
-    /*resize the card*/
-    width : 100%;
-    height : auto;
-  }
-
+@media (max-width: 576px) {
+    .social a {
+        /*change the padding and the font-size*/
+        font-size: 2em;
+        padding: .7rem;
+    }
+    .card {
+        /*resize the card*/
+        width: 100%;
+        height: auto;
+    }
 }
