@@ -267,10 +267,7 @@ def register():
             new_user_id = db_max_id + 1
             db.execute("INSERT INTO users(id, username, email, hash) VALUES(:id, :username, :email, :hash_password)", id=new_user_id, username=username, email=usermail, hash_password=hash_password)
             # store the user's id into session for a better user experience
-            user = db.execute("SELECT id  FROM users WHERE username = :username", username=username)
-            if not user:
-                return apology("Username already taken can not insert the username")
-
+            
             session["user_id"] = user[0]["id"]
 
             # flash a message to the user and render the user's home page
