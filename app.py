@@ -52,10 +52,9 @@ def home():
 @app.route("/index", methods=["GET"])
 def index():
     """Render the main page"""
-
     if request.method == "GET":
         # display homepage if the user is not log in
-        return redirect("/homepage")
+        return redirect("/index.html")
     else:
         return apology("SORRY")
 
