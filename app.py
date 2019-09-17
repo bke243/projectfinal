@@ -235,7 +235,6 @@ def register():
             # add the user in the data base
             db.execute("INSERT INTO users(username, email, hash) VALUES(:username, :email, :hash_password)",
                        {'username': username, 'email':usermail, 'hash_password': hash_password})
-            db.commit()
             # store the user's id into session for a better user experience
             user = db.execute("SELECT id  FROM users WHERE username = :username", username=username)
             if not user:
