@@ -10,7 +10,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 # these import are not from here
 import sqlalchemy
-from datetime import datetime as localtime
 import requests
 import urllib.parse
 import re
@@ -237,7 +236,7 @@ def register():
             max_id = db.execute("SELECT MAX(id) FROM users")
             db_max_id = max_id[0].get("max")
             new_user_id = db_max_id + 1
-            db.execute("INSERT INTO users(id, username, email, hash, datetime) VALUES(:id, :username, :email, :hash_password, :datetime)", id=new_user_id, username=username, email=usermail, hash_password=hash_password, datetime=localtime.utcnow())
+            db.execute("INSERT INTO users(id, username, email, hash, datetime) VALUES(:id, :username, :email, :hash_password)", id=new_user_id, username=username, email=usermail, hash_password=hash_password)
             # store the user's id into session for a better user experience
             user = db.execute("SELECT id  FROM users WHERE username = :username", username=username)
             if not user:
