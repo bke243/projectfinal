@@ -235,7 +235,7 @@ def register():
             # add the user in the data base
             # get the max id
             max_id = db.execute("SELECT MAX(id) FROM users")
-            db_max_id = max_id[0].get("id")
+            db_max_id = max_id[0].get("max")
             new_user_id = db_max_id + 1
             db.execute("INSERT INTO users(id, username, email, hash) VALUES(:id, :username, :email, :hash_password)",
                        {'id': new_user_id, 'username': username, 'email':usermail, 'hash_password': hash_password})
