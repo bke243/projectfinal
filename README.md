@@ -13,8 +13,8 @@ The online calculator is a Flask web-application which doesn't use ad database b
 3. CSS3(Styling language):
     * Used to style the HTML with the purpose of making a nicer user interface. 
 4. JavaScript(Programming language):
-    * Also used for templating and refreshing asynchronously input fields when some specifics events occur.
     * Used as the programming language containing the logic for calculation for calculations which reduces the user interaction time(user side calculation).
+    * Also used for templating and refreshing asynchronously input fields when some specifics events occur.
  
 ## Online Calculator operations 
 In electronic field, some basic operations are usually performed such as computing the total resistance or the total conductance in a resistor circuit, computing the resistor's value using its color code ...
@@ -25,7 +25,7 @@ The following operations can be performed using the online resistor calculator:
     * The total resistance value in parallel circuit resistors,
     * The total resistance value in series circuit resistors,
     * The total conductance value in parallel circuit resistors,
-    * The total conductance value in series circuit resistors,
+    * The total conductance value in series circuit resistors.
 
 ## How to use the web-application 
 
