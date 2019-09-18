@@ -30,3 +30,7 @@ The following operations can be performed using the online resistor calculator:
 ## How to use the web-application 
 
 very easy and clear to use, you don't need a particular guideline. 
+
+
+
+peterbke243
