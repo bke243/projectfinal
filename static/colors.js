@@ -384,7 +384,6 @@ function main_funtion(number_of_bands, colors) {
 
 /*add eventlistener  to our button*/
 $(document).ready(function() {
-    console.log("ready2");
     $("#second_form select").change(function() {
         var Color = this.value;
         var new_background = colors[Color]["color"];
