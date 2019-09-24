@@ -31,13 +31,4 @@ The following operations can be performed using the online resistor calculator:
 
 very easy and clear to use, you don't need a particular guideline. 
 
-
-
-
-
-
-
-
-
-
-@bke243
+### [click to start](https://resistor-onlinecalculator.herokuapp.com/)
