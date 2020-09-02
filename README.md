@@ -1,6 +1,7 @@
+# CS50 
 # RESISTOR ONLINE CALCULATOR
    
-My project is about an online web application which allows users to perform basics operations on resistors. Initially, the application was meant to be entirely designed in python but as a student in electronic filed; it turns out that a web application was a better idea in order to give remote access to myself and everybody in the same field. 
+My project is about an online web application which allows users to perform basics operations on resistors. Initially, the application was meant to be entirely designed in python but as a student with some electronic courses; it turns out that a web application was a better idea in order to give remote access to myself and everybody in the same field. 
        
 ## Presentation of the web application
 The Domain name of the web application is  **resistor-onlinecalculator.herokuapp.com** and is hosted on HEOKU freedev plan.
@@ -31,4 +32,4 @@ The following operations can be performed using the online resistor calculator:
 
 very easy and clear to use, you don't need a particular guideline. 
 
-### [click to start](https://resistor-onlinecalculator.herokuapp.com/)
+### [click to start](https://resistor-onlinecalculator.herokuapp.co
